@@ -1,5 +1,6 @@
 import React, {Fragment, useState} from 'react';
 import Error from './Error';
+import PropTypes from 'prop-types'
 
 const Pregunta = ({guardarPresupuesto,guardarRestante,actualizarPregunta}) => {
 
@@ -35,9 +36,8 @@ const Pregunta = ({guardarPresupuesto,guardarRestante,actualizarPregunta}) => {
             
             {error ?<Error mensaje="El presupuesto es Incorrecto" /> :null}
 
-            <form
-                onSubmit={agregarPresupuesto}
-            >
+            <form onSubmit={agregarPresupuesto} >
+                
                 <input
                     type="number"
                     className="u-full-width"
@@ -56,4 +56,10 @@ const Pregunta = ({guardarPresupuesto,guardarRestante,actualizarPregunta}) => {
      );
 }
  
+Pregunta.propType = {
+    guardarPresupuesto: PropTypes.func.isRequired,
+    guardarRestante: PropTypes.func.isRequired,
+    actualizarPregunta: PropTypes.func.isRequired
+}
+
 export default Pregunta;

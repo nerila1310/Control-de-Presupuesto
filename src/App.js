@@ -65,16 +65,11 @@ function App() {
                                         restante={restante}
                                     />
                                 </div>
-                            </div>
-                        )
+                            </div> )
                     }
-
-                    
                 </div>
-
             </header>
         </div>
-
     );
 }
 
